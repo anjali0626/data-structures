@@ -1,3 +1,5 @@
+// Implement Stack data structure using string as storage
+
 var Stack = function() {
 
   this.storage = '';
