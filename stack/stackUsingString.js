@@ -1,10 +1,15 @@
 var Stack = function() {
+
   this.storage = '';
+
 };
 
 // Input a value in stack
 Stack.prototype.push = function(val) {
-  // TODO..
+
+  this.storage += '-';
+  this.storage += val;
+
 };
 
 // Remove last value from Stack and return the deleted value
