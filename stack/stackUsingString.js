@@ -19,7 +19,19 @@ Stack.prototype.pop = function() {
 
 // Find length of stack
 Stack.prototype.size = function() {
-  // TODO..
+
+  var count = 0;
+
+  for (var i = 0; i <= this.storage.lastIndexOf('-'); i += 1) {
+
+    if (this.storage[i] === '-') {
+      count += 1;
+    }
+
+  }
+
+  return count;
+
 };
 
 // Display stack
