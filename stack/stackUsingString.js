@@ -14,7 +14,13 @@ Stack.prototype.push = function(val) {
 
 // Remove last value from Stack and return the deleted value
 Stack.prototype.pop = function() {
-  // TODO..
+
+  var poppedValue = this.storage.substring(this.storage.lastIndexOf('-')+1);
+
+  this.storage = this.storage.substring(0, this.storage.lastIndexOf('-'));
+
+  return poppedValue;
+
 };
 
 // Find length of stack
