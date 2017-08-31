@@ -27,5 +27,7 @@ Stack.prototype.size = function() {
 
 // Display stack
 Stack.prototype.showStack = function() {
-  // TODO...
+
+  console.log('Your Stack looks like: ', this.storage);
+
 };
