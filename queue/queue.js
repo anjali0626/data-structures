@@ -27,5 +27,7 @@ Queue.prototype.size = function() {
 
 // Display queue
 Queue.prototype.showQueue = function() {
-  // TODO...
+
+  console.log('Your Queue looks like:', this.storage);
+
 };
