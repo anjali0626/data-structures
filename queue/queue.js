@@ -1,12 +1,18 @@
-// Implement Stack data structure using object as storage
+// Implement Queue data structure using object as storage
 
 var Queue = function() {
+
   this.storage = {};
+  this.index = 0;
+
 };
 
 // Input a value in queue
 Queue.prototype.enqueue = function(val) {
-  // TODO...
+
+  this.storage[this.index] = val;
+  this.index += 1;
+
 };
 
 // Remove first value from queue and return the deleted value
