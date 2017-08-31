@@ -22,7 +22,14 @@ Queue.prototype.dequeue = function() {
 
 // Find length of queue
 Queue.prototype.size = function() {
-  // TODO...
+
+  var lengthOfQueue = 0;
+
+  for (var key in this.storage) {
+    lengthOfQueue += 1;
+  }
+
+  return lengthOfQueue;
 };
 
 // Display queue
