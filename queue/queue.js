@@ -17,7 +17,11 @@ Queue.prototype.enqueue = function(val) {
 
 // Remove first value from queue and return the deleted value
 Queue.prototype.dequeue = function() {
-  // TODO...
+
+  var deletedValue = this.storage[Object.keys(this.storage)[0]];
+  delete this.storage[Object.keys(this.storage)[0]];
+
+  return deletedValue;
 };
 
 // Find length of queue
