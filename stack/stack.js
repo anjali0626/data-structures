@@ -22,7 +22,14 @@ Stack.prototype.pop = function() {
 
 // Find length of stack
 Stack.prototype.size = function() {
-  // TODO...
+
+  var lengthOfStack = 0;
+
+  for(var key in this.storage) {
+    lengthOfStack += 1;
+  }
+
+  return lengthOfStack;
 };
 
 // Display stack
