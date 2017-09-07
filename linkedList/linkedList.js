@@ -50,8 +50,19 @@ LinkedList.prototype.removeFromHead = function() {
 };
 
 // Add a node after a reference node in Linked List
-LinkedList.prototype.addAfter = function() {
-  // TODO...
+LinkedList.prototype.addAfter = function(refNode, val) {
+
+  var oldNext = refNode.next;
+  var newNext = new Node(val);
+
+  refNode.next = newNext;
+  newNext.next = oldNext;
+
+  if (this.tail === refNode) {
+    this.tail = newNext;
+  }
+
+  return newNext;
 };
 
 // Delete a node after a reference node in Linked List
