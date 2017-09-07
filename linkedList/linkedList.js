@@ -15,9 +15,14 @@ var LinkedList = function(valueOfHeadNode) {
 };
 
 // Add a node to the end of Linked List
-LinkedList.prototype.addToTail = function() {
-  // TODO...
+LinkedList.prototype.addToTail = function(val) {
 
+  var newTailNode = new Node(val);
+
+  this.tail.next = newTailNode;
+  this.tail = newTailNode;
+
+  return newTailNode;
 };
 
 // Add a node to the beginning of Linked List
