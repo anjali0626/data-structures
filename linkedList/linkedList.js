@@ -26,8 +26,17 @@ LinkedList.prototype.addToTail = function(val) {
 };
 
 // Add a node to the beginning of Linked List
-LinkedList.prototype.addToHead = function() {
-  // TODO...
+LinkedList.prototype.addToHead = function(val) {
+
+  var oldHeadNode = this.head;
+
+  var newHeadNode = new Node(val);
+
+  this.head = newHeadNode;
+
+  newHeadNode.next = oldHeadNode;
+
+  return this.head;
 };
 
 // Delete the tail node of Linked List
