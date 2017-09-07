@@ -1,16 +1,23 @@
 // Implement Linked List data structure
 
-var Node = function() {
-  // TODO...
+var Node = function(val) {
+
+  this.value = val;
+  this.next = null;
+
 };
 
-var LinkedList = function() {
-  // TODO...
+var LinkedList = function(valueOfHeadNode) {
+
+  this.head = new Node(valueOfHeadNode);
+  this.tail = this.head;
+
 };
 
 // Add a node to the end of Linked List
 LinkedList.prototype.addToTail = function() {
   // TODO...
+
 };
 
 // Add a node to the beginning of Linked List
