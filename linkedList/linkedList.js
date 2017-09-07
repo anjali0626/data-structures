@@ -81,13 +81,35 @@ LinkedList.prototype.removeBefore = function() {
 };
 
 // Call the passed in callback function for every value in Linked List
-LinkedList.prototype.forEach = function() {
-  // TODO...
+LinkedList.prototype.forEach = function(callback) {
+
+  var eachNode = this.head;
+
+  while (eachNode) {
+
+    callback(eachNode.value);
+    eachNode = eachNode.next;
+
+  }
+
 };
 
 // Find if node is present in Linked List
-LinkedList.prototype.contains = function() {
-  // TODO...
+LinkedList.prototype.contains = function(val) {
+
+  var currentNode = this.head;
+
+  while (currentNode) {
+
+    if (currentNode.value === val) {
+      return currentNode;
+    } else {
+      currentNode = currentNode.next;
+    }
+
+  }
+
+  return 'There is no node with given value in this Linked List.';
 };
 
 // Display Linked List
