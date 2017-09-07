@@ -81,8 +81,17 @@ LinkedList.prototype.removeBefore = function() {
 };
 
 // Call the passed in callback function for every value in Linked List
-LinkedList.prototype.forEach = function() {
-  // TODO...
+LinkedList.prototype.forEach = function(callback) {
+
+  var eachNode = this.head;
+
+  while (eachNode) {
+
+    callback(eachNode.value);
+    eachNode = eachNode.next;
+
+  }
+
 };
 
 // Find if node is present in Linked List
