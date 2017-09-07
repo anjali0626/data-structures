@@ -95,8 +95,21 @@ LinkedList.prototype.forEach = function(callback) {
 };
 
 // Find if node is present in Linked List
-LinkedList.prototype.contains = function() {
-  // TODO...
+LinkedList.prototype.contains = function(val) {
+
+  var currentNode = this.head;
+
+  while (currentNode) {
+
+    if (currentNode.value === val) {
+      return currentNode;
+    } else {
+      currentNode = currentNode.next;
+    }
+
+  }
+
+  return 'There is no node with given value in this Linked List.';
 };
 
 // Display Linked List
