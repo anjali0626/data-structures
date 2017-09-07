@@ -15,14 +15,28 @@ var LinkedList = function(valueOfHeadNode) {
 };
 
 // Add a node to the end of Linked List
-LinkedList.prototype.addToTail = function() {
-  // TODO...
+LinkedList.prototype.addToTail = function(val) {
 
+  var newTailNode = new Node(val);
+
+  this.tail.next = newTailNode;
+  this.tail = newTailNode;
+
+  return newTailNode;
 };
 
 // Add a node to the beginning of Linked List
-LinkedList.prototype.addToHead = function() {
-  // TODO...
+LinkedList.prototype.addToHead = function(val) {
+
+  var oldHeadNode = this.head;
+
+  var newHeadNode = new Node(val);
+
+  this.head = newHeadNode;
+
+  newHeadNode.next = oldHeadNode;
+
+  return this.head;
 };
 
 // Delete the tail node of Linked List
@@ -36,8 +50,19 @@ LinkedList.prototype.removeFromHead = function() {
 };
 
 // Add a node after a reference node in Linked List
-LinkedList.prototype.addAfter = function() {
-  // TODO...
+LinkedList.prototype.addAfter = function(refNode, val) {
+
+  var oldNext = refNode.next;
+  var newNext = new Node(val);
+
+  refNode.next = newNext;
+  newNext.next = oldNext;
+
+  if (this.tail === refNode) {
+    this.tail = newNext;
+  }
+
+  return newNext;
 };
 
 // Delete a node after a reference node in Linked List
