@@ -17,5 +17,18 @@ Tree.prototype.addChild = function(val) {
 };
 
 Tree.prototype.contains = function(val) {
-  // TODO...
+
+  if (this.value === val) {
+    return true;
+  }
+
+  for (var i = 0; i < this.children.length; i += 1) {
+
+    if (this.children[i].contains(val)) {
+      return true;
+    }
+
+  }
+
+  return false;
 };
