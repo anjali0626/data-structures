@@ -8,7 +8,12 @@ var Tree = function(val) {
 };
 
 Tree.prototype.addChild = function(val) {
-  // TODO...
+
+  var newChild = new Tree(val);
+
+  this.children.push(newChild);
+
+  return newChild;
 };
 
 Tree.prototype.contains = function(val) {
