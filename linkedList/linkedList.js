@@ -46,7 +46,16 @@ LinkedList.prototype.removeFromTail = function() {
 
 // Delete the head node of Linked List
 LinkedList.prototype.removeFromHead = function() {
-  // TODO...
+
+  var oldHeadNode = this.head;
+
+  var newHeadNode = oldHeadNode.next;
+
+  this.head = newHeadNode;
+
+  oldHeadNode.next = null;
+
+  return oldHeadNode;
 };
 
 // Add a node after a reference node in Linked List
