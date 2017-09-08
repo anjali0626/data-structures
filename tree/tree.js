@@ -1,7 +1,10 @@
 // Implement Tree data structure
 
 var Tree = function(val) {
-  // TODO...
+
+  this.value = val;
+  this.children = [];
+
 };
 
 Tree.prototype.addChild = function(val) {
