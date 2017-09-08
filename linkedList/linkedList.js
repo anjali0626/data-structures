@@ -139,6 +139,13 @@ LinkedList.prototype.contains = function(val) {
 };
 
 // Display Linked List
-LinkedList.prototype.showStack = function() {
-  // TODO...
+LinkedList.prototype.showLinkedList = function() {
+
+  var linkedList = [];
+
+  this.forEach(function(val) {
+    linkedList.push(val);
+  });
+
+  return linkedList.join(', ');
 };
