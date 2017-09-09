@@ -41,7 +41,27 @@ LinkedList.prototype.addToHead = function(val) {
 
 // Delete the tail node of Linked List
 LinkedList.prototype.removeFromTail = function() {
-  // TODO...
+
+  var currentNode = this.head;
+
+  if (this.head === this.tail) {
+    return 'There is just 1 node in your Linked List i.e. Head Node';
+  }
+
+  while (currentNode) {
+
+    if (currentNode.next.next === null) {
+
+      var oldTailNode = currentNode.next;
+      this.tail = currentNode;
+      currentNode.next = null;
+
+      return oldTailNode;
+    }
+
+    currentNode = currentNode.next;
+  }
+
 };
 
 // Delete the head node of Linked List
