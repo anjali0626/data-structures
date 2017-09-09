@@ -42,3 +42,21 @@ Queue.prototype.showQueue = function() {
   console.log('Your Queue looks like:', this.storage);
 
 };
+
+// Return the oldest added element in queue
+Queue.prototype.peek = function() {
+
+  var lengthOfQueue = 0;
+
+  for (var key in this.storage) {
+    lengthOfQueue += 1;
+  }
+
+  if (lengthOfQueue === 0) {
+    return 'Your Queue is empty.';
+  }
+
+  var oldestValue = this.storage[Object.keys(this.storage)[0]];
+
+  return oldestValue;
+};
