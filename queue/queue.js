@@ -60,3 +60,17 @@ Queue.prototype.peek = function() {
 
   return oldestValue;
 };
+
+// Find if the queue has the passed in value or not
+Queue.prototype.contains = function(val) {
+
+  for (var key in this.storage) {
+
+    if (this.storage[key] === val) {
+      return true;
+    }
+
+  }
+
+  return false;
+};
