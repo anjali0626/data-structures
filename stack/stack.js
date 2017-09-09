@@ -73,3 +73,27 @@ Stack.prototype.peek = function() {
 
   return lastValue;
 };
+
+// Return the minimum value in stack
+Stack.prototype.minStack = function() {
+
+  var minValue = this.storage[0];
+
+  var lengthOfStack = 0;
+
+  for (var key in this.storage) {
+
+    if (this.storage[key] < minValue) {
+      minValue = this.storage[key];
+    }
+
+    lengthOfStack += 1;
+
+  }
+
+  if (lengthOfStack === 0) {
+    return 'There is no minimum value as your Stack is empty';
+  }
+
+  return minValue;
+};
