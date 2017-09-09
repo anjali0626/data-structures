@@ -53,3 +53,23 @@ Stack.prototype.showStack = function() {
   console.log('Your Stack looks like: ', this.storage);
 
 };
+
+// Return the most recently added element in stack
+Stack.prototype.peek = function() {
+
+  var lastValue;
+
+  var lengthOfStack = 0;
+
+  for (var key in this.storage) {
+    lengthOfStack += 1;
+  }
+
+  if (lengthOfStack === 0) {
+    return 'Your Stack is empty.';
+  }
+
+  lastValue = this.storage[lengthOfStack - 1];
+
+  return lastValue;
+};
