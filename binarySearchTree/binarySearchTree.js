@@ -88,5 +88,15 @@ BinarySearchTree.prototype.traverseDepthFirst_preOrder = function(callback) {
 
 // Traverse binary search tree in depth-first post-order fashion and invoke callback for every node
 BinarySearchTree.prototype.traverseDepthFirst_postOrder = function(callback) {
-  // TODO...
+
+  if (this.leftSubTree) {
+    this.leftSubTree.traverseDepthFirst_postOrder(callback);
+  }
+
+  if (this.rightSubTree) {
+    this.rightSubTree.traverseDepthFirst_postOrder(callback);
+  }
+
+  callback(this);
+
 };
