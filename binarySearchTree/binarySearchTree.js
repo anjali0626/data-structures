@@ -34,7 +34,22 @@ BinarySearchTree.prototype.insert = function(val) {
 
 // Find if value is present in binary search tree
 BinarySearchTree.prototype.contains = function(val) {
-  // TODO...
+
+  if (this.value === val) {
+
+    return true;
+
+  } else if (val < this.value) {
+
+    return !!this.leftSubTree && this.leftSubTree.contains(val);
+
+  } else if (val > this.value) {
+
+    return !!this.rightSubTree && this.rightSubTree.contains(val);
+
+  }
+
+  return false;
 };
 
 // Traverse binary search tree in depth-first in-order fashion and invoke callback for every node
