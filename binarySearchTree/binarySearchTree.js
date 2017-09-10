@@ -54,7 +54,21 @@ BinarySearchTree.prototype.contains = function(val) {
 
 // Traverse binary search tree in depth-first in-order fashion and invoke callback for every node
 BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(callback) {
-  // TODO...
+
+  if (!this.leftSubTree && !this.rightSubTree) {
+    return callback(this);
+  }
+
+  if (this.leftSubTree) {
+    this.leftSubTree.traverseDepthFirst_inOrder(callback);
+  }
+
+  callback(this);
+
+  if (this.rightSubTree) {
+    this.rightSubTree.traverseDepthFirst_inOrder(callback);
+  }
+
 };
 
 // Traverse binary search tree in depth-first pre-order fashion and invoke callback for every node
