@@ -1,7 +1,11 @@
 // Implement Binary Search Tree data structure
 
 var BinarySearchTree = function(val) {
-  // TODO...
+
+  this.value = val;
+  this.leftSubTree = null;
+  this.rightSubTree = null;
+
 };
 
 // Insert a value in it's correct place in binary search tree
