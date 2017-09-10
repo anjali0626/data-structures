@@ -10,7 +10,26 @@ var BinarySearchTree = function(val) {
 
 // Insert a value in it's correct place in binary search tree
 BinarySearchTree.prototype.insert = function(val) {
-  // TODO...
+
+  if (val <= this.value) {
+
+    if (this.leftSubTree) {
+      this.leftSubTree.insert(val);
+    } else {
+      this.leftSubTree = new BinarySearchTree(val);
+    }
+
+  } else if (val > this.value) {
+
+    if (this.rightSubTree) {
+      this.rightSubTree.insert(val);
+    } else {
+      this.rightSubTree = new BinarySearchTree(val);
+    }
+
+  }
+
+  return this;
 };
 
 // Find if value is present in binary search tree
