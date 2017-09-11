@@ -7,7 +7,13 @@ var Graph = function() {
 };
 
 Graph.prototype.addNode = function(val) {
-  // TODO...
+
+  if (val === undefined) {
+    return;
+  }
+
+  this.nodes[val] = this.nodes[val] || [];
+
 };
 
 Graph.prototype.addEdge = function(val1, val2) {
