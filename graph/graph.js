@@ -31,7 +31,9 @@ Graph.prototype.addEdge = function(val1, val2) {
 
 // Find whether two nodes are connected or not in graph
 Graph.prototype.hasEdge = function(val1, val2) {
-  // TODO...
+
+  return this.nodes[val1].indexOf(val2) > -1;
+
 };
 
 // Invoke the passed in callback for each node of graph
