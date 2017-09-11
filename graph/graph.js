@@ -1,7 +1,9 @@
 // Implement Graph data structure
 
 var Graph = function() {
-  // TODO...
+
+  this.nodes = {};
+
 };
 
 Graph.prototype.addNode = function(val) {
