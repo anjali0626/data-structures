@@ -17,7 +17,14 @@ Graph.prototype.addNode = function(val) {
 };
 
 Graph.prototype.addEdge = function(val1, val2) {
-  // TODO...
+
+  if (!this.nodes[val1] || !this.nodes[val2]) {
+    return 'Nodes do not exist';
+  }
+
+  this.nodes[val1].push(val2);
+  this.nodes[val2].push(val1);
+
 };
 
 Graph.prototype.hasEdge = function(val1, val2) {
