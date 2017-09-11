@@ -46,8 +46,34 @@ Graph.prototype.forEach = function(callback) {
 };
 
 // Traverse the graph (starting from the passed in value) and invoke callback for each node in depth-first fashion
-Graph.prototype.traverseDepthFirst = function(val, callback) {
-  // TODO...
+Graph.prototype.traverseDepthFirst = function(val, callback, visited, distance) {
+
+  if (!this.nodes[val]) {
+    return ' Node does not exist in given graph';
+  }
+
+  if (typeof callback !== 'function') {
+    return 'You passed an invalid function';
+  }
+
+  visited = visited || {};
+
+  distance = distance || 0;
+
+  callback(val, distance);
+
+  visited[val] = true;
+
+  this.nodes[val].forEach( function(neighbor) {
+
+    if (visited[neighbor]) {
+      return;
+    }
+
+    this.traverseDepthFirst(neighbor, callback, visited, distance+1);
+
+  }, this );
+
 };
 
 // Traverse the graph (starting from the passed in value) and invoke callback for each node in breadth-first fashion
