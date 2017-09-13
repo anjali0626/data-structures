@@ -8,6 +8,7 @@ var Stack = function() {
 };
 
 // Input a value in stack
+// Time Complexity: O(1)
 Stack.prototype.push = function(val) {
 
   this.storage[this.index] = val;
@@ -16,65 +17,43 @@ Stack.prototype.push = function(val) {
 };
 
 // Remove last value from Stack and return the deleted value
+// Time Complexity: O(1)
 Stack.prototype.pop = function() {
 
-  var lengthOfStack = 0;
-
-  for(var key in this.storage) {
-    lengthOfStack += 1;
+  if (this.index === 0) {
+    return 'Stack is empty.';
   }
 
-  if (lengthOfStack === 0) {
-    return;
-  }
-
-  var poppedValue = this.storage[lengthOfStack-1];
-  delete this.storage[lengthOfStack-1];
+  var poppedValue = this.storage[this.index - 1];
+  delete this.storage[this.index - 1];
   this.index -= 1;
 
-  return poppedValue;
+  return 'Deleted element = ' + poppedValue;
 };
 
 // Find length of stack
+// Time Complexity: O(1)
 Stack.prototype.size = function() {
 
-  var lengthOfStack = 0;
-
-  for(var key in this.storage) {
-    lengthOfStack += 1;
-  }
-
-  return lengthOfStack;
-};
-
-// Display stack
-Stack.prototype.showStack = function() {
-
-  console.log('Your Stack looks like: ', this.storage);
-
+  return 'Size of Stack = ' + this.index;
 };
 
 // Return the most recently added element in stack
+// Time Complexity: O(1)
 Stack.prototype.peek = function() {
 
-  var lastValue;
-
-  var lengthOfStack = 0;
-
-  for (var key in this.storage) {
-    lengthOfStack += 1;
+  if (this.index === 0) {
+    return 'Stack is empty.';
   }
 
-  if (lengthOfStack === 0) {
-    return 'Your Stack is empty.';
-  }
+  var lastValue = this.storage[this.index - 1];
 
-  lastValue = this.storage[lengthOfStack - 1];
+  return 'Last element in Stack = ' + lastValue;
 
-  return lastValue;
 };
 
 // Return the minimum value in stack
+// Time Complexity: O(n)
 Stack.prototype.minStack = function() {
 
   var minValue = this.storage[0];
@@ -95,5 +74,5 @@ Stack.prototype.minStack = function() {
     return 'There is no minimum value as your Stack is empty';
   }
 
-  return minValue;
+  return 'Minimum element of Stack = ' + minValue;
 };
