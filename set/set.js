@@ -19,7 +19,8 @@ Set.prototype.delete = function(val) {
 
 // Find the number of values present in set
 Set.prototype.size = function() {
-  // TODO...
+
+  return this.counter;
 };
 
 // Find whether a value is present in set or not
