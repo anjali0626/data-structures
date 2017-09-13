@@ -69,5 +69,5 @@ Stack.prototype.minStack = function() {
     return 'There is no minimum value as your Stack is empty';
   }
 
-  return minValue;
+  return 'Minimum element of Stack = ' + minValue;
 };
