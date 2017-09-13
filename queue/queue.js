@@ -36,13 +36,6 @@ Queue.prototype.size = function() {
   return 'Size of Queue = ' + lengthOfQueue;
 };
 
-// Display queue
-Queue.prototype.showQueue = function() {
-
-  console.log('Your Queue looks like:', this.storage);
-
-};
-
 // Return the oldest added element in queue
 Queue.prototype.peek = function() {
 
