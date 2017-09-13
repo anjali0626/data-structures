@@ -1,7 +1,10 @@
 // Implement Set data structure
 
 var Set = function() {
-  // TODO...
+
+  this.storage = {};
+  this.counter = 0;
+
 };
 
 // Add a value to set
