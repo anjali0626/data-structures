@@ -18,18 +18,12 @@ Stack.prototype.push = function(val) {
 // Remove last value from Stack and return the deleted value
 Stack.prototype.pop = function() {
 
-  var lengthOfStack = 0;
-
-  for(var key in this.storage) {
-    lengthOfStack += 1;
+  if (this.index === 0) {
+    return 'Stack is empty.';
   }
 
-  if (lengthOfStack === 0) {
-    return;
-  }
-
-  var poppedValue = this.storage[lengthOfStack-1];
-  delete this.storage[lengthOfStack-1];
+  var poppedValue = this.storage[this.index - 1];
+  delete this.storage[this.index - 1];
   this.index -= 1;
 
   return poppedValue;
