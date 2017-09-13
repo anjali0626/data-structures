@@ -25,7 +25,8 @@ Set.prototype.size = function() {
 
 // Find whether a value is present in set or not
 Set.prototype.has = function(val) {
-  // TODO...
+
+  return !!this.storage[val];
 };
 
 // Invoke callback for every value present in set
