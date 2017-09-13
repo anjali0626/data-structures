@@ -1,0 +1,30 @@
+// Implement Set data structure
+
+var Set = function() {
+  // TODO...
+};
+
+// Add a value to set
+Set.prototype.add = function(val) {
+  // TODO...
+};
+
+// Delete a value from set
+Set.prototype.delete = function(val) {
+  // TODO...
+};
+
+// Find the number of values present in set
+Set.prototype.size = function() {
+  // TODO...
+};
+
+// Find whether a value is present in set or not
+Set.prototype.has = function(val) {
+  // TODO...
+};
+
+// Invoke callback for every value present in set
+Set.prototype.forEach = function(callback) {
+  // TODO...
+};
