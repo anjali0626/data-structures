@@ -8,6 +8,7 @@ var Queue = function() {
 };
 
 // Input a value in queue
+// Time Complexity : O(1)
 Queue.prototype.enqueue = function(val) {
 
   this.storage[this.index] = val;
@@ -16,6 +17,7 @@ Queue.prototype.enqueue = function(val) {
 };
 
 // Remove first value from queue and return the deleted value
+// Time Complexity : O(1)
 Queue.prototype.dequeue = function() {
 
   if (Object.keys(this.storage).length === 0) {
@@ -29,6 +31,7 @@ Queue.prototype.dequeue = function() {
 };
 
 // Find length of queue
+// Time Complexity : O(1)
 Queue.prototype.size = function() {
 
   var lengthOfQueue = Object.keys(this.storage).length;
@@ -37,6 +40,7 @@ Queue.prototype.size = function() {
 };
 
 // Return the oldest added element in queue
+// Time Complexity : O(1)
 Queue.prototype.peek = function() {
 
   if (Object.keys(this.storage).length === 0) {
@@ -49,6 +53,7 @@ Queue.prototype.peek = function() {
 };
 
 // Find if the queue has the passed in value or not
+// Time Complexity : O(n)
 Queue.prototype.contains = function(val) {
 
   for (var key in this.storage) {
