@@ -8,6 +8,7 @@ var Stack = function() {
 };
 
 // Input a value in stack
+// Time Complexity: O(1)
 Stack.prototype.push = function(val) {
 
   this.storage[this.index] = val;
@@ -16,6 +17,7 @@ Stack.prototype.push = function(val) {
 };
 
 // Remove last value from Stack and return the deleted value
+// Time Complexity: O(1)
 Stack.prototype.pop = function() {
 
   if (this.index === 0) {
@@ -30,12 +32,14 @@ Stack.prototype.pop = function() {
 };
 
 // Find length of stack
+// Time Complexity: O(1)
 Stack.prototype.size = function() {
 
   return 'Size of Stack = ' + this.index;
 };
 
 // Return the most recently added element in stack
+// Time Complexity: O(1)
 Stack.prototype.peek = function() {
 
   if (this.index === 0) {
@@ -49,6 +53,7 @@ Stack.prototype.peek = function() {
 };
 
 // Return the minimum value in stack
+// Time Complexity: O(n)
 Stack.prototype.minStack = function() {
 
   var minValue = this.storage[0];
