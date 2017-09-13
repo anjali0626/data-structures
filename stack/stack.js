@@ -26,19 +26,13 @@ Stack.prototype.pop = function() {
   delete this.storage[this.index - 1];
   this.index -= 1;
 
-  return poppedValue;
+  return 'Deleted element = ' + poppedValue;
 };
 
 // Find length of stack
 Stack.prototype.size = function() {
 
-  var lengthOfStack = 0;
-
-  for(var key in this.storage) {
-    lengthOfStack += 1;
-  }
-
-  return lengthOfStack;
+  return 'Size of Stack = ' + this.index;
 };
 
 // Display stack
