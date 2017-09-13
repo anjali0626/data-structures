@@ -45,21 +45,14 @@ Stack.prototype.showStack = function() {
 // Return the most recently added element in stack
 Stack.prototype.peek = function() {
 
-  var lastValue;
-
-  var lengthOfStack = 0;
-
-  for (var key in this.storage) {
-    lengthOfStack += 1;
+  if (this.index === 0) {
+    return 'Stack is empty.';
   }
 
-  if (lengthOfStack === 0) {
-    return 'Your Stack is empty.';
-  }
+  var lastValue = this.storage[this.index - 1];
 
-  lastValue = this.storage[lengthOfStack - 1];
+  return 'Last element in Stack = ' + lastValue;
 
-  return lastValue;
 };
 
 // Return the minimum value in stack
