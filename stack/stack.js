@@ -35,13 +35,6 @@ Stack.prototype.size = function() {
   return 'Size of Stack = ' + this.index;
 };
 
-// Display stack
-Stack.prototype.showStack = function() {
-
-  console.log('Your Stack looks like: ', this.storage);
-
-};
-
 // Return the most recently added element in stack
 Stack.prototype.peek = function() {
 
