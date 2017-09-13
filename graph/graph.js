@@ -78,5 +78,39 @@ Graph.prototype.traverseDepthFirst = function(val, callback, visited, distance) 
 
 // Traverse the graph (starting from the passed in value) and invoke callback for each node in breadth-first fashion
 Graph.prototype.traverseBreadthFirst = function(val, callback) {
-  // TODO...
+
+  if (!this.nodes[val]) {
+    return ' Node does not exist in given graph';
+  }
+
+  if (typeof callback !== 'function') {
+    return 'You passed an invalid function';
+  }
+
+  var visited = {};
+  visited[val] = 0;
+
+  var queue = [val];
+
+  while (queue.length) {
+
+    var node = queue.shift();
+
+    callback(node, visited[node]);
+
+    var neighbors = this.nodes[node].filter(function(neighbor) {
+
+      if (visited[neighbor] === undefined) {
+
+        visited[neighbor] = visited[node] + 1;
+
+        return true;
+      }
+
+    });
+
+    queue = queue.concat(neighbors);
+
+  }
+
 };
