@@ -39,13 +39,7 @@ Queue.prototype.size = function() {
 // Return the oldest added element in queue
 Queue.prototype.peek = function() {
 
-  var lengthOfQueue = 0;
-
-  for (var key in this.storage) {
-    lengthOfQueue += 1;
-  }
-
-  if (lengthOfQueue === 0) {
+  if (Object.keys(this.storage).length === 0) {
     return 'Your Queue is empty.';
   }
 
