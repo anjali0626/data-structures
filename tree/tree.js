@@ -7,6 +7,7 @@ var Tree = function(val) {
 
 };
 
+// Time Complexity : O(1)
 Tree.prototype.addChild = function(val) {
 
   var newChild = new Tree(val);
@@ -16,6 +17,7 @@ Tree.prototype.addChild = function(val) {
   return newChild;
 };
 
+// Time Complexity : O(n)
 Tree.prototype.contains = function(val) {
 
   if (this.value === val) {
