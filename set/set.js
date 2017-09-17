@@ -47,5 +47,9 @@ Set.prototype.delete = function(val) {
 
 // Invoke callback for every value present in set
 Set.prototype.forEach = function(callback) {
-  // TODO...
+
+  for (var key in this.storage) {
+    callback(key);
+  }
+
 };
