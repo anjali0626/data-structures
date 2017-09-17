@@ -7,16 +7,6 @@ var Set = function() {
 
 };
 
-// Add a value to set
-Set.prototype.add = function(val) {
-  // TODO...
-};
-
-// Delete a value from set
-Set.prototype.delete = function(val) {
-  // TODO...
-};
-
 // Find the number of values present in set
 Set.prototype.size = function() {
 
@@ -27,6 +17,24 @@ Set.prototype.size = function() {
 Set.prototype.has = function(val) {
 
   return !!this.storage[val];
+};
+
+// Add a value to set
+Set.prototype.add = function(val) {
+
+  if (this.has(val)) {
+    return 'Value is already present in Set.';
+  }
+
+  this.storage[val] = true;
+  this.counter += 1;
+
+  return this;
+};
+
+// Delete a value from set
+Set.prototype.delete = function(val) {
+  // TODO...
 };
 
 // Invoke callback for every value present in set
