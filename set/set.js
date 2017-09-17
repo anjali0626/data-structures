@@ -8,18 +8,21 @@ var Set = function() {
 };
 
 // Find the number of values present in set
+// Time Complexity : O(1)
 Set.prototype.size = function() {
 
   return this.counter;
 };
 
 // Find whether a value is present in set or not
+// Time Complexity : O(1)
 Set.prototype.has = function(val) {
 
   return !!this.storage[val];
 };
 
 // Add a value to set
+// Time Complexity : O(1)
 Set.prototype.add = function(val) {
 
   if (this.has(val)) {
@@ -33,6 +36,7 @@ Set.prototype.add = function(val) {
 };
 
 // Delete a value from set
+// Time Complexity : O(1)
 Set.prototype.delete = function(val) {
 
   if (this.storage[val]) {
@@ -46,6 +50,7 @@ Set.prototype.delete = function(val) {
 };
 
 // Invoke callback for every value present in set
+// Time Complexity : O(n)
 Set.prototype.forEach = function(callback) {
 
   for (var key in this.storage) {
