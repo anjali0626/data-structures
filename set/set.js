@@ -34,7 +34,15 @@ Set.prototype.add = function(val) {
 
 // Delete a value from set
 Set.prototype.delete = function(val) {
-  // TODO...
+
+  if (this.storage[val]) {
+    delete this.storage[val];
+    this.counter -= 1;
+
+    return true;
+  }
+
+  return false;
 };
 
 // Invoke callback for every value present in set
